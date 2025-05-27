@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes pulse-slow {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(236, 72, 153, 0.2);
+  }
+}
+
+@keyframes scale {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+.animate-scale {
+  animation: scale 20s linear forwards;
+}
+
+.animate-card {
+  animation: pulse-slow 3s ease-in-out infinite, glow 3s ease-in-out infinite;
+}
+
+.animate-card:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.animate-card:nth-child(3) {
+  animation-delay: 1s;
+}
+
+.animate-card:nth-child(4) {
+  animation-delay: 1.5s;
+}
